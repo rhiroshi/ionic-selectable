@@ -1543,7 +1543,7 @@ export class IonicSelectableComponent implements ControlValueAccessor, OnInit, D
           // before Modal opening.
           self._setIonItemHasFocus(true);
           resolve();
-        });
+        }).catch(er =>{ reject(er) });
 
         modal.onWillDismiss().then(() => {
           self._setIonItemHasFocus(false);
